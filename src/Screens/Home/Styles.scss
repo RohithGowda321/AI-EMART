@@ -1,0 +1,61 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    & .homepage__logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    & .homepage__nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #2c3e50;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  &__main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .homepage__section {
+      max-width: 900px;
+      text-align: center;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    color: #777;
+  }
+}

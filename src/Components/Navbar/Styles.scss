@@ -1,0 +1,138 @@
+.navbar {
+  width: 100%;
+  background: #ffffff; // White navbar background
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; // Blue logo for contrast
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      color: #363636ad;
+      text-decoration: none;
+
+      font-size: 0.95rem;
+      transition: background 0.3s;
+    //   font-style: oblique;
+    font-weight: bold;
+
+      &:hover {
+        color: #007bff; // Darker blue on hover
+      }
+    }
+
+    .navbar__buttons {
+      display: flex;
+      gap: 0.8rem;
+    //   margin-left: 1.5rem;
+
+      .btn {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+
+        &-primary {
+          background: #007bff; // Create Account button blue
+          color: white;
+          &:hover {
+            background: #0056b3;
+          }
+        }
+
+        &-outline {
+          background: transparent;
+          border: 1px solid #007bff;
+          color: #007bff;
+          &:hover {
+            background: rgba(0, 123, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #007bff;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 900;
+  }
+
+  /* Mobile Sidebar */
+  @media (max-width: 900px) {
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 260px;
+      background: #ffffff; // Sidebar is white
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 4rem 1.5rem;
+      gap: 1.2rem;
+      transition: right 0.3s ease-in-out;
+      z-index: 1001;
+
+      &.open {
+        right: 0;
+      }
+
+      a {
+        background: #007bff; // Blue menu pill
+        color: white;
+        width: 100%;
+        text-align: center;
+      }
+
+      .navbar__buttons {
+        flex-direction: column;
+        width: 100%;
+
+        .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    &__toggle {
+      display: block;
+    }
+  }
+}
